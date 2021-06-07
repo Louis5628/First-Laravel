@@ -16,6 +16,7 @@
             <div class="card-body">
               <h5 class="card-title">{{ $item->title }}</h5>
               <p class="card-text">{{ $item->content }}</p>
+              <a href="{{ asset('/news') }}/{{ $item->id }}">查看更多</a>
             </div>
           </div>
         </div>
