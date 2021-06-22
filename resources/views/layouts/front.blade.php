@@ -12,15 +12,12 @@
 </head>
 
 <body>
-    <!-- 本範例要做到的事情有 -->
-    <!-- 1. 剛好佔滿一整個畫面 -->
-    <!-- 2. parallax 效果 怎麼做 -->
-    <!-- 3. 文字區塊 高度會是活動的 -->
-    <!-- 4. id與class的混合使用技巧 -->
+
     <div class="nav">
         <a href="{{ asset('/') }}">首頁</a>
         <a href="{{ asset('/news') }}">最新消息</a>
         <a href="{{ asset('/product') }}">產品</a>
+        <a href="{{ asset('/contactus') }}">聯絡我們</a>
         <a href="#block-2-Anchor">文字區塊1</a>
         <a href="#block-4-Anchor">文字區塊2</a>
         <a href="#block-6-Anchor">文字區塊3</a>
@@ -28,6 +25,12 @@
     </div>
 
    <div class="container">
+        @if (Session::has('message'))
+        <div class="alert alert-success" role="alert">
+            {{ Session::get('message') }}
+        </div>
+        @endif
+        
        @yield('content')
    </div>
 

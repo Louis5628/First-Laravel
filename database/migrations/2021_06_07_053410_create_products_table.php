@@ -16,11 +16,11 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             // table->資料型態('欄位名稱'->修飾符);
-            $table->string('name')->comment('產品名稱');
-            $table->integer('price')->comment('產品價格');
-            $table->float('discount')->comment('產品折扣');
+            $table->string('name')->comment('產品名稱')->nullable();
+            $table->integer('price')->comment('產品價格')->nullable();
+            $table->float('discount')->comment('產品折扣')->nullable();
             $table->text('discript')->comment('產品描述')->nullable();
-            $table->longText('img')->comment('產品圖片');
+            $table->longText('img')->comment('產品圖片')->nullable();
             $table->timestamps();
         });
     }

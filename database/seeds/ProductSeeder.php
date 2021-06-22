@@ -21,7 +21,7 @@ class ProductSeeder extends Seeder
             DB::table('products')->insert([
                 'name' => Str::random(10),
                 'price' => rand(100,2000),
-                'discount' => rand(0, 10) / 10,
+                'discount' => rand(0, 100) / 100,
                 'discript' => Str::random(16),
                 'img' => Str::random(16),
 
